@@ -1,0 +1,11 @@
+<form [formGroup]="caseForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="caseName">Case Name:</label>
+    <input id="caseName" formControlName="caseName">
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>

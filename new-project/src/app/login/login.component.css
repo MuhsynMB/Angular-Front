@@ -1,0 +1,78 @@
+/* Container styles */
+.login-container {
+  background-color: teal; /* Set the background color to teal */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+}
+
+/* Title styles */
+.login-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Form styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label styles */
+.form-label {
+  margin-bottom: 5px;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Input field styles */
+.input_field {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button group styles */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Styled button styles */
+.styled-button {
+  background-color: #89CFF0; /* Baby blue color */
+  border: none;
+  border-radius: 4px;
+  color: teal;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.styled-button:hover {
+  background-color: #77BCE5; /* Darker baby blue on hover */
+}
+
+/* Footer styles */
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: white;
+}
