@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateNewCaseComponent } from './createnewcase/createnewcase.component';
-import { ViewexistingcaseComponent } from './viewexistingcase/viewexistingcase.component';
+import { ViewExistingCaseComponent } from './viewexistingcase/viewexistingcase.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     LoginComponent,
     SignupComponent,
     CreateNewCaseComponent,
-    ViewexistingcaseComponent,
+    ViewExistingCaseComponent,
     DashboardComponent,
     ErrorComponent
   ],
@@ -24,11 +25,14 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
     
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withInterceptorsFromDi())
+   
   ],
   bootstrap: [AppComponent]
 })

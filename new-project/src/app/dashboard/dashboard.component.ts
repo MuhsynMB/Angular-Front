@@ -10,7 +10,8 @@ export class DashboardComponent {
   constructor(private router: Router) { }
 
   navigateToCreateNewCase() {
-    this.router.navigate(['/new']);
+    const id = 0;
+    this.router.navigate(['/new',id]);
   }
 
   navigateToViewExistingCase() {

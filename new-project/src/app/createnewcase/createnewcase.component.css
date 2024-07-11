@@ -1,59 +1,47 @@
-/* General form styling */
-.case-form {
+form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   background-color: #f9f9f9;
 }
 
-/* Styling for form groups */
-.case-form .form-group {
+form div {
   margin-bottom: 15px;
 }
 
-/* Styling for labels */
-.case-form label {
+label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
 }
 
-/* Styling for inputs and selects */
-.case-form input[type="text"],
-.case-form select {
-  width: calc(100% - 20px); /* Subtracting padding to keep the elements inside the border */
-  padding: 10px;
-  margin-top: 5px;
+input[type="text"],
+input[type="datetime-local"],
+textarea {
+  width: 100%;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-/* Styling for the submit button */
-.case-form .submit-btn {
-  display: inline-block;
-  padding: 10px 20px;
+button {
+  padding: 10px 15px;
   background-color: #007bff;
-  color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
-/* Submit button hover effect */
-.case-form .submit-btn:hover {
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:not([disabled]):hover {
   background-color: #0056b3;
-}
-
-/* Adding responsive design for smaller screens */
-@media (max-width: 600px) {
-  .case-form {
-    padding: 15px;
-  }
 }

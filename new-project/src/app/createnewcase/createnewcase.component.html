@@ -1,11 +1,16 @@
-<form [formGroup]="caseForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="caseForm">
   <div>
-    <label for="caseName">Case Name:</label>
-    <input id="caseName" formControlName="caseName">
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" />
   </div>
   <div>
-    <label for="description">Description:</label>
+    <label for="description">Description</label>
     <textarea id="description" formControlName="description"></textarea>
   </div>
-  <button type="submit">Submit</button>
+  <div>
+    <label for="createdAt">Created At</label>
+    <input id="createdAt" formControlName="createdAt" type="datetime-local" />
+  </div>
+  <button type="submit" (click)="saveCases()" *ngIf="!id">Create Case</button>
+  <button type="submit" (click)="updateCases()" *ngIf="id">Update Case</button>
 </form>

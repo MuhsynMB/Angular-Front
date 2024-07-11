@@ -1,6 +1,8 @@
-<p>viewexistingcase works!</p>
-<div *ngFor="let caseItem of cases; let i = index">
-    <p>{{ caseItem.caseName }}: {{ caseItem.description }}</p>
-    <button (click)="deleteCase(i)">Delete</button>
-    <!-- You can add more functionality to update cases here -->
-  </div>
+<div *ngFor="let caseItem of cases; let i = index" class="case-item">
+  <h3>{{ caseItem.title }}</h3>
+  <p>{{ caseItem.description }}</p>
+  <button (click)="deleteCase(caseItem.id)">Delete</button>
+  <button (click)="updateCase(caseItem.id)">
+    Update
+  </button>
+</div>

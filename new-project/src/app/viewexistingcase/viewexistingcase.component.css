@@ -1,0 +1,42 @@
+.case-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .case-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+  }
+  
+  .case-item p {
+    margin: 0 0 10px;
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .case-item button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .case-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  .case-item button:last-child {
+    background-color: #28a745;
+  }
+  
+  .case-item button:last-child:hover {
+    background-color: #218838;
+  }
+  

@@ -1,32 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { CasesService } from '../services/cases.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-viewexistingcase',
   templateUrl: './viewexistingcase.component.html',
-  styleUrl: './viewexistingcase.component.css'
+  styleUrls: ['./viewexistingcase.component.css']
 })
-export class ViewexistingcaseComponent implements OnInit {
-  cases: any[] = [];
+export class ViewExistingCaseComponent implements OnInit {
+  cases: any;
+
+  constructor(private casesService: CasesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.loadCases();
+    this.getCases();
+  }
+
+  getCases() {
+    this.casesService.getCases().subscribe(
+      res => {
+        this.cases =  res;
+        console.log(res);
+      }
+     );
   }
 
   loadCases(): void {
-    let casesString = localStorage.getItem('cases');
-this.cases = casesString ? JSON.parse(casesString) : [];
-
+    this.casesService.getCases().subscribe(
+      data => {
+        this.cases = data;
+      },
+      error => {
+        console.error('Error loading cases', error);
+      }
+    );
   }
 
-  deleteCase(index: number): void {
-    this.cases.splice(index, 1);
-    localStorage.setItem('cases', JSON.stringify(this.cases));
+  deleteCase(id: any): void {
+    this.casesService.deleteCase(id).subscribe(
+      (response) => {
+          this.ngOnInit();
+
+        // this.cases = this.cases.filter(=> c.id !== id);
+      },
+      error => {
+        console.error('Error deleting case', error);
+      }
+    );
   }
 
-  updateCase(index: number, updatedCase: any): void {
-    this.cases[index] = updatedCase;
-    localStorage.setItem('cases', JSON.stringify(this.cases));
+  updateCase(id: number): void {
+    this.router.navigate(['/new',id])
+
   }
 }
-
